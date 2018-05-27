@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django_cleanup',
     'rest_framework',
     'figure',
+    'sound',
 ]
 
 MIDDLEWARE = [
