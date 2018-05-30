@@ -21,7 +21,7 @@ from rest_framework.routers import DefaultRouter
 
 from figure.views import ImageViewSet, Base64ImageViewSet
 from sound.views import SoundViewSet
-
+from .views import index
 
 router = DefaultRouter()
 router.register(r'base64images', Base64ImageViewSet, base_name='base64image-list')
@@ -29,6 +29,7 @@ router.register(r'images', ImageViewSet, base_name='image-list')
 router.register(r'sounds', SoundViewSet, base_name='sound-list')
 
 urlpatterns = [
+    path('', index),
     path('admin/', admin.site.urls),
     path('api/v1/', include(router.urls)),
 ]
