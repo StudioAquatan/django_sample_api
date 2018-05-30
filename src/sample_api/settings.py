@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_cleanup',
     'rest_framework',
+    'drf_extra_fields',
     'figure',
     'sound',
 ]

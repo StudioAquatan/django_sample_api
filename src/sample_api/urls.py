@@ -19,11 +19,12 @@ from django.conf.urls.static import static
 from django.conf import settings
 from rest_framework.routers import DefaultRouter
 
-from figure.views import ImageViewSet
+from figure.views import ImageViewSet, Base64ImageViewSet
 from sound.views import SoundViewSet
 
 
 router = DefaultRouter()
+router.register(r'base64images', Base64ImageViewSet, base_name='base64image-list')
 router.register(r'images', ImageViewSet, base_name='image-list')
 router.register(r'sounds', SoundViewSet, base_name='sound-list')
 
