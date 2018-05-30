@@ -10,6 +10,7 @@ django-cleanup = "*"
 pillow = "*"
 python-dotenv = "*"
 django-extra-fields = "*"
+uwsgi = "*"
 
 [dev-packages]
 
