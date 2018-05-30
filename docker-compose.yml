@@ -1,0 +1,38 @@
+version: '3'
+services:
+  static:
+    image: nginx:latest
+    contianer_name: django-sample-static
+    expose:
+      - 80
+    volumes:
+      - ./conf:/etc/nginx/conf.d
+      - ./src/static:/opt/sample_api/src/static
+      - ./src/media:/opt/sample_api/src/media
+    depends_on:
+      - app
+    networks:
+      shared:
+        aliases:
+          - django-sample-static
+    env_file:
+      - env_files/static.env
+  app:
+    image: studioaquatan/django_sample_api:latest
+    container_name: django-sample-api
+    volumes:
+      - ./src/media:/opt/sample_api/src/media
+      - ./src/data:/opt/sample_api/src/data
+    expose:
+      - 8000
+    env_file:
+      - env_files/api.env
+    networks:
+      shared:
+        aliases:
+          - django-sample-app
+
+networks:
+  shared:
+    external:
+      name: shared

@@ -224,3 +224,5 @@ venv.bak/
 src/media/*
 src/data/*
 !.gitkeep
+
+env_files/*.env
