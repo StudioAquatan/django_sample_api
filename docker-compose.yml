@@ -2,7 +2,7 @@ version: '3'
 services:
   static:
     image: nginx:latest
-    contianer_name: django-sample-static
+    container_name: django-sample-static
     expose:
       - 80
     volumes:
